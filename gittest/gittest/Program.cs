@@ -18,7 +18,7 @@ namespace gittest
 
             string name2 = Console.ReadLine();
 
-            System.Console.WriteLine("hej " + name1 + " " +name2);
+            System.Console.WriteLine("hej " +name2);
         }
     }
 }
