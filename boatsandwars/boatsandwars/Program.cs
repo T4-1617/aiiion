@@ -62,9 +62,9 @@ namespace boatsandwars
             while (shipcount > 0)
             {
                 Console.Write("X kordinat:");
-                int strikeX = int.Parse(Console.ReadLine());
+                int strikeX = int.Parse(Console.ReadLine())+1;
                 Console.Write("y kordinat:");
-                int strikeY = int.Parse(Console.ReadLine());
+                int strikeY = int.Parse(Console.ReadLine())+1;
 
                 if (BattleField[strikeX, strikeY] == true)
                 {
@@ -80,6 +80,8 @@ namespace boatsandwars
                     shotcount++;
                 }
             }
+            Console.WriteLine("YOU WON! You only had to fire {0} shots!", shotcount);
+            Console.ReadLine();
         }
     }
 }
