@@ -40,20 +40,46 @@ namespace boatsandwars
                     string place;
                     if (BattleField[x, y] == true)
                     {
-                        place = "X";
+                        place = " X ";
                         
                     }
                     else
                     {
                         
-                        place = "O";
+                        place = " O ";
                         
                     }
                     Console.Write(place);
                 }
                 Console.WriteLine();
             }
-            //skriver spelplanen i consolen
+            //skriver ut spelplanen i consolen
+
+            Console.WriteLine("Skjut mot skeppen genom att ange kordinater till kanonen!");
+
+            int shotcount = 0;
+            int shipcount = 4;
+            while (shipcount > 0)
+            {
+                Console.Write("X kordinat:");
+                int strikeX = int.Parse(Console.ReadLine());
+                Console.Write("y kordinat:");
+                int strikeY = int.Parse(Console.ReadLine());
+
+                if (BattleField[strikeX, strikeY] == true)
+                {
+                    Console.WriteLine("Hit! Ship down");
+                    BattleField[strikeX, strikeY] = false;
+                    shotcount++;
+                    shipcount--;
+                    Console.WriteLine("Ships left: " + shipcount);
+                }
+                else
+                {
+                    Console.WriteLine("Miss, try again!");
+                    shotcount++;
+                }
+            }
         }
     }
 }
