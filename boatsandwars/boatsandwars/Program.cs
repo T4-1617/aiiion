@@ -62,9 +62,9 @@ namespace boatsandwars
             while (shipcount > 0)
             {
                 Console.Write("X kordinat:");
-                int strikeX = int.Parse(Console.ReadLine())+1;
+                int strikeX = int.Parse(Console.ReadLine())-1;
                 Console.Write("y kordinat:");
-                int strikeY = int.Parse(Console.ReadLine())+1;
+                int strikeY = int.Parse(Console.ReadLine())-1;
 
                 if (BattleField[strikeX, strikeY] == true)
                 {
