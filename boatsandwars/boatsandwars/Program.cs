@@ -19,6 +19,7 @@ namespace boatsandwars
                     BattleField[x, y] = false;
                 }
             }
+            //skapar spelplanen
 
             Random roll = new Random();
             int ships = 4;
@@ -27,8 +28,32 @@ namespace boatsandwars
                 int x = roll.Next(0, 7);
                 int y = roll.Next(0, 7);
                 BattleField[x, y] = true;
+                ships--;
+
             }
 
+            //sätter ut skepp slumpmässigt på spelplanen
+            for (int y = 0; y < 7; y++)
+            {
+                for (int x = 0; x < 7; x++)
+                {
+                    string place;
+                    if (BattleField[x, y] == true)
+                    {
+                        place = "X";
+                        
+                    }
+                    else
+                    {
+                        
+                        place = "O";
+                        
+                    }
+                    Console.Write(place);
+                }
+                Console.WriteLine();
+            }
+            //skriver spelplanen i consolen
         }
     }
 }
