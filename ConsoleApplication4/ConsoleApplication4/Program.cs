@@ -16,34 +16,36 @@ namespace ConsoleApplication4
                 for (int x = 0; x < 13; x++) {
                     CardGame[x, y] = false;
                 }
-            }
+            } //Skapar kortleken om 13 valöreroch 4 färjer
             Random roll = new Random();
             int cards = 52;
-            while (cards > 0) {
+            int score = 0;
+            while (cards > 0) { //lägger ut 52 kort
                 int x = roll.Next(0, 13);
                 int y = roll.Next(0, 4);
-                if (CardGame[x, y] != true)
+                if (CardGame[x, y] != true) //ser till att alla kort endast läggs en gång
                 {
                     Console.WriteLine("tryck på enter för ett kort");
                     Console.ReadLine();
+                    Console.Write("du fick kortet ");
                     switch (y)
-                    {
+                    {//skriver ut vilken färj man fått
                         case 0:
-                            Console.Write("ditt kortnummer är hjärter ");
+                            Console.Write("hjärter ");
                             break;
                         case 1:
-                            Console.Write("ditt kortnummer är spader ");
+                            Console.Write("spader ");
                             break;
                         case 2:
-                            Console.Write("ditt kortnummer är ruter ");
+                            Console.Write("ruter ");
                             break;
                         case 3:
-                            Console.Write("ditt kortnummer är klöver ");
+                            Console.Write("klöver ");
                             break;
                         
 
                     }
-                    switch (x)
+                    switch (x) //skriver ut vilken valör på kortet man fått (höga kort skrivs ut som ess, knäckt etc)
                     {
                         case 0:
                             Console.WriteLine("ess");
@@ -61,11 +63,16 @@ namespace ConsoleApplication4
                             Console.WriteLine(x + 1);
                             break;
                     }
+
                     
+                    score =score + x + 1;
                     CardGame[x, y] = true;
                     cards--;
+                    Console.WriteLine("du har {0} poäng ",score);
+                    Console.WriteLine("och det finns {0} kort kvar i leken", cards);
+
                 }
-            
+                
                 
             }
         }
