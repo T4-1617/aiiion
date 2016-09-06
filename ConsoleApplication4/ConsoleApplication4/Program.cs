@@ -29,7 +29,7 @@ namespace ConsoleApplication4
                     Console.ReadLine();
                     Console.Write("du fick kortet ");
                     switch (y)
-                    {//skriver ut vilken färj man fått
+                    {//skriver ut vilken färg man fått
                         case 0:
                             Console.Write("hjärter ");
                             break;
@@ -65,9 +65,9 @@ namespace ConsoleApplication4
                     }
 
                     
-                    score =score + x + 1;
-                    CardGame[x, y] = true;
-                    cards--;
+                    score =score + x + 1; //räknar poängen
+                    CardGame[x, y] = true; //sätter kortet som true så det inte kan visas igen
+                    cards--; //håller koll p hur många kort är kvar i kortleken
                     Console.WriteLine("du har {0} poäng ",score);
                     Console.WriteLine("och det finns {0} kort kvar i leken", cards);
 
