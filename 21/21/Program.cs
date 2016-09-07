@@ -28,6 +28,7 @@ namespace _21
                 switch (hitme)
                 {
                     case "y":
+                    case "Y":
                         int x = roll.Next();
                         int y = roll.Next();
                         if (deckCards[x, y] != true)
@@ -51,8 +52,40 @@ namespace _21
                                 case 7:
                                     Console.Write("klöver ");
                                     break;
+                                default:
+                                    Console.WriteLine("ERROR");
+                                    break;
                             }
+                            switch (x)
+                            {
+                                case 0:
+                                    Console.Write("ess");
+                                    break;
+                                case 10:
+                                    Console.Write("ess");
+                                    break;
+                                case 11:
+                                    Console.Write("ess");
+                                    break;
+                                case 12:
+                                    Console.Write("ess");
+                                    break;
+                                default:
+                                    Console.Write(x + 1);
+                                    break;
+                            }
+                            score = score + x + 1;
+                            deckCards[x, y] = true;
+                            cardsLeft--;
+                            Console.WriteLine("du ligger på " + score);
                         }
+                        break;
+                    case "n":
+                    case "N":
+
+                        break;
+                    default:
+                        Console.WriteLine("Du måste svara med antingen n eller y");
                         break;
 
                 }
