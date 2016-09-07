@@ -29,6 +29,8 @@ namespace _21
                 {
                     case "j":
                     case "J":
+                        int done = 1;
+                        while (done == 1) { 
                         int x = roll.Next(0, 13);
                         int y = roll.Next(0, 8);
                         if (deckCards[x, y] != true)
@@ -78,6 +80,10 @@ namespace _21
                             deckCards[x, y] = true;
                             cardsLeft--;
                             Console.WriteLine(" du ligger på " + score);
+                                done = 0;
+                            
+                                
+                            }
                         }
                         break;
                     case "n":
@@ -93,10 +99,18 @@ namespace _21
                         break;
 
                 }
-                switch (score)
-                {
+                if (score > 21) {
+                    Console.WriteLine("DU SPRACK! Din total blev {0} Bättre lycka nästa gång!", score);
+                    score = 0;
+                    Console.WriteLine("Tryck på enter för att spela igen");
+                    Console.ReadLine();
 
-
+                }
+                else if (score == 21){
+                    Console.WriteLine("DU VANN! Grattis!");
+                    score = 0;
+                    Console.WriteLine("Tryck på enter för att spela igen");
+                    Console.ReadLine();
                 }
             }
             Console.WriteLine("Tvärr finns det inga fler kort, spelet avslutas");
