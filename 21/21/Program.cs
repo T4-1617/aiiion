@@ -10,8 +10,8 @@ namespace _21
     {
         static void Main(string[] args)
         {
-            bool[,] deckCards = new bool[13, 8];
-            for (int y = 0; y < 8; y++)
+            bool[,] deckCards = new bool[13, 16];
+            for (int y = 0; y < 16; y++)
             {
                 for (int x = 0; x < 13; x++)
                 {
@@ -19,7 +19,7 @@ namespace _21
                 }
             }
             Random roll = new Random();
-            int cardsLeft = 104;
+            int cardsLeft = 208;
             int score = 0;
             while (cardsLeft > 0)
             {
@@ -32,7 +32,7 @@ namespace _21
                         int done = 1;
                         while (done == 1) { 
                         int x = roll.Next(0, 13);
-                        int y = roll.Next(0, 8);
+                        int y = roll.Next(0, 16);
                         if (deckCards[x, y] != true)
                         {
                             Console.Write("Du fick kortet ");
@@ -40,18 +40,26 @@ namespace _21
                             {
                                 case 0:
                                 case 4:
+                                case 8:
+                                case 12:
                                     Console.Write("hjärter ");
                                     break;
                                 case 1:
                                 case 5:
+                                case 9:
+                                case 13:
                                     Console.Write("spader ");
                                     break;
                                 case 2:
                                 case 6:
+                                case 10:
+                                case 14:
                                     Console.Write("ruter ");
                                     break;
                                 case 3:
                                 case 7:
+                                case 11:
+                                case 15:
                                     Console.Write("klöver ");
                                     break;
                                 default:
@@ -62,15 +70,19 @@ namespace _21
                             {
                                 case 0:
                                     Console.Write("ess");
-                                    break;
+                                        x = 10;
+                                        break;
                                 case 10:
                                     Console.Write("kneckt");
-                                    break;
+                                        x = 10;
+                                        break;
                                 case 11:
                                     Console.Write("dam");
-                                    break;
+                                        x = 10;
+                                        break;
                                 case 12:
                                     Console.Write("kung");
+                                        x = 10;
                                     break;
                                 default:
                                     Console.Write(x + 1);
@@ -80,9 +92,7 @@ namespace _21
                             deckCards[x, y] = true;
                             cardsLeft--;
                             Console.WriteLine(" du ligger på " + score);
-                                done = 0;
-                            
-                                
+                            done = 0; 
                             }
                         }
                         break;
