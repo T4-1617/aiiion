@@ -188,7 +188,6 @@ namespace _21
                         {
                             Console.WriteLine("DU SPRACK! Din total blev {0} Bättre lycka nästa gång!", score);
                             score = 0;
-                            opponentpoints = opponentpoints + 3;
                             urpoints = urpoints - 1;
                             Console.WriteLine("Din totalpoäng är {0} och dealerns är {1}", urpoints, opponentpoints);
                             Console.WriteLine("Tryck på enter för att spela igen");
@@ -204,8 +203,7 @@ namespace _21
                             score = 0;
                             cont = false;
                             opposition = 0;
-                            urpoints = urpoints + 3;
-                            opponentpoints = opponentpoints- 1;
+                            urpoints = urpoints + 1;
                             Console.WriteLine("Din totalpoäng är {0} och dealerns är {1}", urpoints, opponentpoints);
                             Console.WriteLine("Tryck på enter för att spela igen");
                             Console.ReadLine();
@@ -218,7 +216,6 @@ namespace _21
                                 cont = false;
                                 opposition = 0;
                                 urpoints = urpoints + 3;
-                                opponentpoints = opponentpoints - 1;
                                 Console.WriteLine("Din totalpoäng är {0} och dealerns är {1}", urpoints, opponentpoints);
                                 Console.WriteLine("Tryck på enter för att spela igen");
                                 Console.ReadLine();
@@ -230,9 +227,8 @@ namespace _21
                                 score = 0;
                                 cont = false;
                                 opposition = 0;
-                                opponentpoints = opponentpoints + 3;
                                 urpoints = urpoints - 1;
-                                Console.WriteLine("Din totalpoäng är {0} och dealerns är {1}", urpoints, opponentpoints);
+                                Console.WriteLine("Din totalpoäng är {0}", urpoints,);
                                 Console.WriteLine("Tryck på enter för att spela igen");
                                 Console.ReadLine();
                                 done = true;
