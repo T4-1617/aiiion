@@ -25,7 +25,9 @@ namespace _21
             int score = 0;
             int opposition = 0;
             Boolean cont = false;
-
+            Boolean finished = false;
+            int opponentpoints = 0;
+            int urpoints = 0;
             while (cardsLeft > 0)
             {
                 while (cont == false)
@@ -174,10 +176,8 @@ namespace _21
                                 break;
                             case "n":
                             case "N":
-                                Console.WriteLine("Du slutade på " + score);
-                                score = 0;
-                                Console.WriteLine("Tryck på enter för att spela igen");
-                                Console.ReadLine();
+                                finished = true;
+                                
                                 break;
 
                             default:
@@ -212,9 +212,22 @@ namespace _21
                     {
                         cont = true;
                     }
-
-
+                if (finished == true && cont == true)
+                {
+                    if (opposition >= score)
+                    {
+                        Console.WriteLine( "Dealern winner på {0}, och du förlorar med {1}" ,opponentpoints,urpoints );
+                        opponentpoints = opponentpoints + 3;
+                        
+                    }
+                    Console.WriteLine("Du slutade på {0} och dealern {1}", score, opposition);
+                    score = 0;
+                    opposition = 0;
+                    Console.WriteLine("Tryck på enter för att spela igen");
+                    Console.ReadLine();
                 }
+
+            }
                     Console.WriteLine("Tvärr finns det inga fler kort, spelet avslutas");
                 
 
