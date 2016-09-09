@@ -24,6 +24,7 @@ namespace _21
             int cardsLeft = 208;
             int score = 0;
             int opposition = 0;
+            Boolean done = false;
             Boolean cont = false;
             Boolean finished = false;
             int opponentpoints = 0;
@@ -71,19 +72,19 @@ namespace _21
                         {
                             case 0:
                                 Console.Write("ess");
-                                x = 10;
+                                x = 9;
                                 break;
                             case 10:
                                 Console.Write("kneckt");
-                                x = 10;
+                                x = 9;
                                 break;
                             case 11:
                                 Console.Write("dam");
-                                x = 10;
+                                x = 9;
                                 break;
                             case 12:
                                 Console.Write("kung");
-                                x = 10;
+                                x = 9;
                                 break;
                             default:
                                 Console.Write(x + 1);
@@ -103,8 +104,8 @@ namespace _21
                         {
                             case "j":
                             case "J":
-                                int done = 1;
-                                while (done == 1)
+                                Boolean rdy = false;
+                                while (rdy == false)
                                 {
                                     x = roll.Next(0, 13);
                                     y = roll.Next(0, 16);
@@ -167,10 +168,8 @@ namespace _21
                                         deckCards[x, y] = true;
                                         cardsLeft--;
                                         Console.WriteLine(" du ligger på " + score);
-                                        done = 0;
-                                        
+                                        rdy = true;
                                     }
-
 
                                 }
                                 break;
@@ -189,22 +188,56 @@ namespace _21
                         {
                             Console.WriteLine("DU SPRACK! Din total blev {0} Bättre lycka nästa gång!", score);
                             score = 0;
+                            opponentpoints = opponentpoints + 3;
+                            urpoints = urpoints - 1;
+                            Console.WriteLine("Din totalpoäng är {0} och dealerns är {1}", urpoints, opponentpoints);
                             Console.WriteLine("Tryck på enter för att spela igen");
                             Console.ReadLine();
                             cont = false;
                             opposition = 0;
+                            done = true;
 
                         }
-                        else if (score == 21)
+                        else if (opposition > 21)
                         {
-                            Console.WriteLine("DU VANN! Grattis!");
+                            Console.WriteLine("DEALERN SPRACK! Din total blev {0}!", score);
                             score = 0;
-                            Console.WriteLine("Tryck på enter för att spela igen");
-                            Console.ReadLine();
                             cont = false;
                             opposition = 0;
-                        }
-                    if (score > opposition && score < 21)
+                            urpoints = urpoints + 3;
+                            opponentpoints = opponentpoints- 1;
+                            Console.WriteLine("Din totalpoäng är {0} och dealerns är {1}", urpoints, opponentpoints);
+                            Console.WriteLine("Tryck på enter för att spela igen");
+                            Console.ReadLine();
+                            done = true;
+                }
+                            else if (score == 21)
+                            {
+                                Console.WriteLine("DU VANN! Grattis!");
+                                score = 0;
+                                cont = false;
+                                opposition = 0;
+                                urpoints = urpoints + 3;
+                                opponentpoints = opponentpoints - 1;
+                                Console.WriteLine("Din totalpoäng är {0} och dealerns är {1}", urpoints, opponentpoints);
+                                Console.WriteLine("Tryck på enter för att spela igen");
+                                Console.ReadLine();
+                                done = true;
+                }
+                            else if (opposition == 21)
+                            {
+                                Console.WriteLine("Dealern vinner på 21");
+                                score = 0;
+                                cont = false;
+                                opposition = 0;
+                                opponentpoints = opponentpoints + 3;
+                                urpoints = urpoints - 1;
+                                Console.WriteLine("Din totalpoäng är {0} och dealerns är {1}", urpoints, opponentpoints);
+                                Console.WriteLine("Tryck på enter för att spela igen");
+                                Console.ReadLine();
+                                done = true;
+                }
+                if (score > opposition && score < 21)
                     {
                         cont = false;
                     }
@@ -212,19 +245,27 @@ namespace _21
                     {
                         cont = true;
                     }
-                if (finished == true && cont == true)
+                if (finished == true && cont == true && done ==false)
                 {
                     if (opposition >= score)
                     {
-                        Console.WriteLine( "Dealern winner på {0}, och du förlorar med {1}" ,opponentpoints,urpoints );
+                        Console.WriteLine( "Dealern winner på {0}, och du förlorar med {1}" ,opposition,score );
                         opponentpoints = opponentpoints + 3;
-                        
+                        urpoints = urpoints - 1;
                     }
-                    Console.WriteLine("Du slutade på {0} och dealern {1}", score, opposition);
+                    else
+                    {
+                        Console.WriteLine("du winner med {0}, och dealern förlorar på {1}", opposition, score);
+                        urpoints = urpoints + 3;
+                        opponentpoints = opponentpoints - 1;
+
+                    }
                     score = 0;
                     opposition = 0;
+                    Console.WriteLine("Runda avslutad, din totala poäng är {0} och dealerns är {1}",urpoints, opponentpoints);
                     Console.WriteLine("Tryck på enter för att spela igen");
                     Console.ReadLine();
+
                 }
 
             }
