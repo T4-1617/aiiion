@@ -10,7 +10,7 @@ namespace Winformklass
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }
-
+        public string id { get; set; }
         public string Fullname()
         {
             return string.Format("{0} {1}", Firstname, Lastname);

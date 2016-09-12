@@ -56,7 +56,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(82, 99);
+            this.button1.Location = new System.Drawing.Point(114, 87);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -68,29 +68,30 @@
             // 
             this.Firstname.Location = new System.Drawing.Point(114, 21);
             this.Firstname.Name = "Firstname";
-            this.Firstname.Size = new System.Drawing.Size(100, 20);
+            this.Firstname.Size = new System.Drawing.Size(113, 20);
             this.Firstname.TabIndex = 3;
             // 
             // Lastname
             // 
             this.Lastname.Location = new System.Drawing.Point(114, 48);
             this.Lastname.Name = "Lastname";
-            this.Lastname.Size = new System.Drawing.Size(100, 20);
+            this.Lastname.Size = new System.Drawing.Size(113, 20);
             this.Lastname.TabIndex = 4;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(95, 149);
+            this.listBox1.Location = new System.Drawing.Point(16, 151);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.Size = new System.Drawing.Size(211, 199);
             this.listBox1.TabIndex = 5;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(252, 378);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.Lastname);
             this.Controls.Add(this.Firstname);
