@@ -33,7 +33,7 @@ namespace kooraBil
         {
             panel1.Visible = true;
 
-            Transport a = (Transport)MyTransport[];
+            Transport a = (Transport)MyTransport[listBox1.SelectedIndex];
            
         }
 
