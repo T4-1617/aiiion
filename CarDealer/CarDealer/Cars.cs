@@ -8,6 +8,13 @@ namespace CarDealer
 {
     class Cars
     {
-        public string Car { get; set; }
+        public string Brand { get; set; }
+        public string Modell { get; set; }
+        public string hp { get; set; }
+        public string passangers { get; set; }
+        public string year { get; set; }
+        public bool busy { get; set; }
+        
+
     }
 }

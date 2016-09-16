@@ -32,9 +32,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,12 +69,31 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.listBox1);
             this.panel1.Location = new System.Drawing.Point(58, 119);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(301, 171);
             this.panel1.TabIndex = 3;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(172, 121);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(110, 44);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Boka";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(4, 5);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(162, 160);
+            this.listBox1.TabIndex = 0;
             // 
             // label1
             // 
@@ -84,22 +104,12 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "label1";
             // 
-            // listBox1
+            // panel2
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(4, 5);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(162, 160);
-            this.listBox1.TabIndex = 0;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(172, 121);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 44);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Boka";
-            this.button4.UseVisualStyleBackColor = true;
+            this.panel2.Location = new System.Drawing.Point(3, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(298, 166);
+            this.panel2.TabIndex = 2;
             // 
             // Form1
             // 
@@ -128,6 +138,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
