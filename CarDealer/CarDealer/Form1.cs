@@ -80,7 +80,11 @@ namespace CarDealer
 
         private void button2_Click(object sender, EventArgs e)
         {
+            panel1.Visible = true;
+            panel2.Visible = true;
+            panel3.Visible = true;
             
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -106,6 +110,22 @@ namespace CarDealer
             panel1.Visible = false;
             panel2.Visible = false;
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Carlist.Add(new Cars()
+            {//lägger till en bil
+                Brand = textBox1.Text,
+                Modell = textBox2.Text,
+                hp = textBox3.Text,
+                passangers = textBox4.Text,
+                year = textBox5.Text,
+                busy = false
+            });
+            panel1.Visible = false;
+            panel2.Visible = false;
+            panel3.Visible = false;
         }
     }
 }
