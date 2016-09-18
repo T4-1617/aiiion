@@ -47,38 +47,62 @@ namespace CarDealer
                 busy = false
             });
 
-            foreach (Cars Cars in Carlist)
-            {
-                if (Cars.busy == false) //(ska)skriver ut de lediga bilarna
-                {
-                    listBox1.Items.Add(Cars);
-                    listBox1.DisplayMember = "Brand";
-                } 
-                else if (Cars.busy ==true)//(ska) skriva ut utlånade bilar
-                {
-                    listBox2.Items.Add(Cars);
-                    listBox2.DisplayMember = ("Brand");
-                }
-            }
+           
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            panel2.Visible = false;//ser till att rätt panel visas
             panel1.Visible = true;
+            listBox1.Items.Clear();//rensar listan på lediga bilar
+            foreach (Cars Cars in Carlist)//skriver ut de lediga bilarna
+            {
+                if (Cars.busy == false) 
+                {
+                    listBox1.Items.Add(Cars);
+                    listBox1.DisplayMember = "Brand";
+                }
+               
+            }
 
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Cars busy = true;
+            Cars k = (Cars)listBox1.SelectedItem;
+            k.busy = true;//ändrar bilens status till tillgänglig
             panel1.Visible = false;
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
             panel2.Visible = true;
+            //ser till att rätt panel visas
+            listBox2.Items.Clear();//rensar listan på ´hyrda bilar
+            foreach (Cars Cars in Carlist)//skriver ut de upptagna lediga bilarna
+            {
+                if (Cars.busy == true)
+                {
+                    listBox2.Items.Add(Cars);
+                    listBox2.DisplayMember = ("Brand");
+                }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Cars k = (Cars)listBox1.SelectedItem;
+            k.busy = false;
         }
     }
 }

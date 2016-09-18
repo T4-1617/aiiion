@@ -32,13 +32,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.button4 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +71,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Return Car";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel1
             // 
@@ -81,6 +82,43 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(301, 171);
             this.panel1.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.listBox2);
+            this.panel2.Location = new System.Drawing.Point(3, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(298, 166);
+            this.panel2.TabIndex = 2;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(199, 116);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(80, 44);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Return Car";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(174, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Which car would you like to return?";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(4, 55);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(188, 108);
+            this.listBox2.TabIndex = 0;
             // 
             // button4
             // 
@@ -108,42 +146,6 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "label1";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.listBox2);
-            this.panel2.Location = new System.Drawing.Point(3, 5);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(298, 166);
-            this.panel2.TabIndex = 2;
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(4, 55);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(188, 108);
-            this.listBox2.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Which car would you like to return?";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(199, 116);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(80, 44);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Return Car";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
