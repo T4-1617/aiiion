@@ -101,8 +101,11 @@ namespace CarDealer
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Cars k = (Cars)listBox1.SelectedItem;
+            Cars k = (Cars)listBox2.SelectedItem;
             k.busy = false;
+            panel1.Visible = false;
+            panel2.Visible = false;
+
         }
     }
 }
