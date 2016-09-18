@@ -13,6 +13,7 @@ namespace CarDealer
     public partial class Form1 : Form
     {
         System.Collections.ArrayList Carlist;
+        int avalible = 2;
 
         public Form1()
         {
@@ -46,9 +47,7 @@ namespace CarDealer
                 year = "2014",
                 busy = false
             });
-
-           
-
+            label1.Text = String.Format("Det finns {0} bilar tillgängliga", avalible);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,8 +64,6 @@ namespace CarDealer
                 }
                
             }
-
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -74,8 +71,10 @@ namespace CarDealer
             Cars k = (Cars)listBox1.SelectedItem;
             k.busy = true;//ändrar bilens status till tillgänglig
             panel1.Visible = false;
-
-
+            if (avalible > 0)
+            {
+                avalible--;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -83,7 +82,6 @@ namespace CarDealer
             panel1.Visible = true;
             panel2.Visible = true;
             panel3.Visible = true;
-            
 
         }
 
@@ -91,9 +89,10 @@ namespace CarDealer
         {
             panel1.Visible = true;
             panel2.Visible = true;
+            panel3.Visible = false;
             //ser till att rätt panel visas
             listBox2.Items.Clear();//rensar listan på ´hyrda bilar
-            foreach (Cars Cars in Carlist)//skriver ut de upptagna lediga bilarna
+            foreach (Cars Cars in Carlist)//skriver ut de upptagna bilarna
             {
                 if (Cars.busy == true)
                 {
@@ -126,6 +125,11 @@ namespace CarDealer
             panel1.Visible = false;
             panel2.Visible = false;
             panel3.Visible = false;
+            textBox1.Text = null;//rensar gammal data från textbox
+            textBox2.Text = null;
+            textBox3.Text = null;
+            textBox4.Text = null;
+            textBox5.Text = null;
         }
     }
 }
