@@ -27,7 +27,8 @@ namespace CarDealer
                 hp = "231",
                 passangers = "5",
                 year = "2015",
-                busy = false
+                busy = false,
+                customer = string.Empty
             });
             Carlist.Add(new Cars()
             {//lägger till en bil
@@ -36,7 +37,8 @@ namespace CarDealer
                 hp = "189",
                 passangers = "5",
                 year = "2016",
-                busy = true
+                busy = true,
+                customer = "Urban Suedi"
             });
             Carlist.Add(new Cars()
             {//lägger till en bil
@@ -45,7 +47,8 @@ namespace CarDealer
                 hp = "249",
                 passangers = "5",
                 year = "2014",
-                busy = false
+                busy = false,
+                customer = string.Empty
             });
             label1.Text = String.Format("Det finns {0} bilar tillgängliga", avalible);
         }
@@ -76,6 +79,7 @@ namespace CarDealer
             panel2.Visible = true;
             panel3.Visible = true;
             panel4.Visible = true;
+            panel5.Visible = true;
             if (avalible > 0)//ser till att värdet för lediga bilar kan bli negativt
             {
                 avalible--;
@@ -133,6 +137,7 @@ namespace CarDealer
                 passangers = textBox4.Text,
                 year = textBox5.Text,
                 busy = false
+                
             });
             avalible++;
             label1.Text = String.Format("Det finns {0} bilar tillgängliga", avalible);//ser till att rätt antal lediga bilar visas
@@ -145,6 +150,34 @@ namespace CarDealer
             textBox3.Text = null;
             textBox4.Text = null;
             textBox5.Text = null;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Cars k = (Cars)listBox1.SelectedItem;
+            k.customer = textBox6.Text;//anger vem som hyr bilen
+            panel5.Visible = false;
+        }
+
+
+
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            listBox3.Items.Clear();
+            foreach (Cars Cars in Carlist)//skriver ut de upptagna bilarna och vem som hyr dem
+            {
+                if (Cars.busy == true)
+                {
+                    listBox3.Items.Add(Cars.ToString());
+                    
+                }
+            }
         }
     }
 }
