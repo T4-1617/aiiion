@@ -54,6 +54,8 @@ namespace CarDealer
         {
             panel2.Visible = false;//ser till att rätt panel visas
             panel1.Visible = true;
+            panel3.Visible = false;
+            panel4.Visible = false;
             listBox1.Items.Clear();//rensar listan på lediga bilar
             foreach (Cars Cars in Carlist)//skriver ut de lediga bilarna
             {
@@ -70,10 +72,14 @@ namespace CarDealer
         {
             Cars k = (Cars)listBox1.SelectedItem;
             k.busy = true;//ändrar bilens status till tillgänglig
-            panel1.Visible = false;
-            if (avalible > 0)
+            panel1.Visible = true;
+            panel2.Visible = true;
+            panel3.Visible = true;
+            panel4.Visible = true;
+            if (avalible > 0)//ser till att värdet för lediga bilar kan bli negativt
             {
                 avalible--;
+                label1.Text = String.Format("Det finns {0} bilar tillgängliga", avalible);//uppdaterar hur många bilar det finns
             }
         }
 
@@ -82,7 +88,7 @@ namespace CarDealer
             panel1.Visible = true;
             panel2.Visible = true;
             panel3.Visible = true;
-            panel4.Visible = false;
+            panel4.Visible = false;//ser till att rätt panel visas
 
         }
 
@@ -108,15 +114,19 @@ namespace CarDealer
         {
             Cars k = (Cars)listBox2.SelectedItem;
             k.busy = false;
-            panel1.Visible = false;
-            panel2.Visible = false;
+            avalible++;
+            label1.Text = String.Format("Det finns {0} bilar tillgängliga", avalible);
+            panel1.Visible = true;
+            panel2.Visible = true;
+            panel3.Visible = true;
+            panel4.Visible = true;
 
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             Carlist.Add(new Cars()
-            {//lägger till en bil
+            {                   //lägger till en bil
                 Brand = textBox1.Text,
                 Modell = textBox2.Text,
                 hp = textBox3.Text,
@@ -124,9 +134,12 @@ namespace CarDealer
                 year = textBox5.Text,
                 busy = false
             });
-            panel1.Visible = false;
-            panel2.Visible = false;
-            panel3.Visible = false;
+            avalible++;
+            label1.Text = String.Format("Det finns {0} bilar tillgängliga", avalible);//ser till att rätt antal lediga bilar visas
+            panel1.Visible = true;
+            panel2.Visible = true;
+            panel3.Visible = true;
+            panel4.Visible = true;//visar rätt panel
             textBox1.Text = null;//rensar gammal data från textbox
             textBox2.Text = null;
             textBox3.Text = null;
