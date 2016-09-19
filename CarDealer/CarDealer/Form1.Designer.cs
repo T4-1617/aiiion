@@ -339,7 +339,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(386, 72);
+            this.label10.Location = new System.Drawing.Point(370, 72);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 13);
             this.label10.TabIndex = 5;
@@ -348,7 +348,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(494, 67);
+            this.button8.Location = new System.Drawing.Point(513, 67);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 7;
@@ -359,9 +359,9 @@
             // listBox3
             // 
             this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(389, 122);
+            this.listBox3.Location = new System.Drawing.Point(373, 122);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(180, 199);
+            this.listBox3.Size = new System.Drawing.Size(215, 199);
             this.listBox3.TabIndex = 8;
             // 
             // Form1
