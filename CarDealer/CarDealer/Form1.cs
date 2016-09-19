@@ -82,6 +82,7 @@ namespace CarDealer
             panel1.Visible = true;
             panel2.Visible = true;
             panel3.Visible = true;
+            panel4.Visible = false;
 
         }
 
@@ -90,6 +91,7 @@ namespace CarDealer
             panel1.Visible = true;
             panel2.Visible = true;
             panel3.Visible = false;
+            panel4.Visible = false; 
             //ser till att rätt panel visas
             listBox2.Items.Clear();//rensar listan på ´hyrda bilar
             foreach (Cars Cars in Carlist)//skriver ut de upptagna bilarna
