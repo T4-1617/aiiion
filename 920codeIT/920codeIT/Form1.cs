@@ -20,6 +20,7 @@ namespace _920codeIT
         {
             InitializeComponent();
             panel1.Visible = false;
+            panel2.Visible = false;
             panel3.Visible = false;
             panel4.Visible = false;
             label2.Text = string.Format("Du har {0} kunder, {1} anställda och {2} leverantörer registerarde",customersID,employed,Suppliers);
@@ -95,6 +96,21 @@ namespace _920codeIT
                 default:
                     break;
             }
+            foreach (Supplier item in peopleList)
+            {
+
+            }
+     
+            panel1.Visible = false;
+            panel3.Visible = false;
+            panel4.Visible = false;
+            textBox1.Text = null;
+            textBox2.Text = null;
+            textBox3.Text = null;
+            textBox4.Text = null;
+            textBox5.Text = null;
+            textBox6.Text = null;
+            textBox7.Text = null;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -113,6 +129,17 @@ namespace _920codeIT
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
 
         }
     }
