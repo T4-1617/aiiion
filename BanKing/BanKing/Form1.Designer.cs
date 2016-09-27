@@ -37,29 +37,29 @@
             this.btnBalance = new System.Windows.Forms.Button();
             this.btnDetails = new System.Windows.Forms.Button();
             this.listBox3 = new System.Windows.Forms.ListBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panCusBtns = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panWithdraw = new System.Windows.Forms.Panel();
+            this.panDeposit = new System.Windows.Forms.Panel();
+            this.panBalance = new System.Windows.Forms.Panel();
+            this.panNewAcc = new System.Windows.Forms.Panel();
             this.btnConfirmNew = new System.Windows.Forms.Button();
             this.btnCancelNew = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.panAccounts = new System.Windows.Forms.Panel();
+            this.panCusBtns.SuspendLayout();
+            this.panWithdraw.SuspendLayout();
+            this.panDeposit.SuspendLayout();
+            this.panBalance.SuspendLayout();
+            this.panNewAcc.SuspendLayout();
+            this.panAccounts.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -143,15 +143,15 @@
             this.listBox3.Size = new System.Drawing.Size(140, 355);
             this.listBox3.TabIndex = 8;
             // 
-            // panel1
+            // panCusBtns
             // 
-            this.panel1.Controls.Add(this.btnBalance);
-            this.panel1.Controls.Add(this.btnDeposit);
-            this.panel1.Controls.Add(this.btnWithdraw);
-            this.panel1.Location = new System.Drawing.Point(421, 82);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(122, 91);
-            this.panel1.TabIndex = 9;
+            this.panCusBtns.Controls.Add(this.btnBalance);
+            this.panCusBtns.Controls.Add(this.btnDeposit);
+            this.panCusBtns.Controls.Add(this.btnWithdraw);
+            this.panCusBtns.Location = new System.Drawing.Point(421, 82);
+            this.panCusBtns.Name = "panCusBtns";
+            this.panCusBtns.Size = new System.Drawing.Size(122, 91);
+            this.panCusBtns.TabIndex = 9;
             // 
             // textBox1
             // 
@@ -201,43 +201,43 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Balance:";
             // 
-            // panel2
+            // panWithdraw
             // 
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(265, 268);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(166, 44);
-            this.panel2.TabIndex = 17;
+            this.panWithdraw.Controls.Add(this.textBox2);
+            this.panWithdraw.Controls.Add(this.label1);
+            this.panWithdraw.Location = new System.Drawing.Point(265, 268);
+            this.panWithdraw.Name = "panWithdraw";
+            this.panWithdraw.Size = new System.Drawing.Size(166, 44);
+            this.panWithdraw.TabIndex = 17;
             // 
-            // panel3
+            // panDeposit
             // 
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(265, 318);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(166, 35);
-            this.panel3.TabIndex = 18;
+            this.panDeposit.Controls.Add(this.textBox1);
+            this.panDeposit.Controls.Add(this.label2);
+            this.panDeposit.Location = new System.Drawing.Point(265, 318);
+            this.panDeposit.Name = "panDeposit";
+            this.panDeposit.Size = new System.Drawing.Size(166, 35);
+            this.panDeposit.TabIndex = 18;
             // 
-            // panel4
+            // panBalance
             // 
-            this.panel4.Controls.Add(this.textBox3);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(265, 359);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(166, 29);
-            this.panel4.TabIndex = 19;
+            this.panBalance.Controls.Add(this.textBox3);
+            this.panBalance.Controls.Add(this.label3);
+            this.panBalance.Location = new System.Drawing.Point(265, 359);
+            this.panBalance.Name = "panBalance";
+            this.panBalance.Size = new System.Drawing.Size(166, 29);
+            this.panBalance.TabIndex = 19;
             // 
-            // panel5
+            // panNewAcc
             // 
-            this.panel5.Controls.Add(this.textBox4);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.btnCancelNew);
-            this.panel5.Controls.Add(this.btnConfirmNew);
-            this.panel5.Location = new System.Drawing.Point(44, 268);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(200, 156);
-            this.panel5.TabIndex = 20;
+            this.panNewAcc.Controls.Add(this.textBox4);
+            this.panNewAcc.Controls.Add(this.label4);
+            this.panNewAcc.Controls.Add(this.btnCancelNew);
+            this.panNewAcc.Controls.Add(this.btnConfirmNew);
+            this.panNewAcc.Location = new System.Drawing.Point(44, 268);
+            this.panNewAcc.Name = "panNewAcc";
+            this.panNewAcc.Size = new System.Drawing.Size(200, 156);
+            this.panNewAcc.TabIndex = 20;
             // 
             // btnConfirmNew
             // 
@@ -283,43 +283,43 @@
             this.label5.Text = "I am a:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // panel6
+            // panAccounts
             // 
-            this.panel6.Controls.Add(this.btnOpenNew);
-            this.panel6.Controls.Add(this.listBox2);
-            this.panel6.Location = new System.Drawing.Point(256, 50);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(159, 183);
-            this.panel6.TabIndex = 22;
+            this.panAccounts.Controls.Add(this.btnOpenNew);
+            this.panAccounts.Controls.Add(this.listBox2);
+            this.panAccounts.Location = new System.Drawing.Point(256, 50);
+            this.panAccounts.Name = "panAccounts";
+            this.panAccounts.Size = new System.Drawing.Size(159, 183);
+            this.panAccounts.TabIndex = 22;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 483);
-            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panAccounts);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panNewAcc);
+            this.Controls.Add(this.panBalance);
+            this.Controls.Add(this.panDeposit);
+            this.Controls.Add(this.panWithdraw);
+            this.Controls.Add(this.panCusBtns);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.btnDetails);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.comboBox1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
+            this.panCusBtns.ResumeLayout(false);
+            this.panWithdraw.ResumeLayout(false);
+            this.panWithdraw.PerformLayout();
+            this.panDeposit.ResumeLayout(false);
+            this.panDeposit.PerformLayout();
+            this.panBalance.ResumeLayout(false);
+            this.panBalance.PerformLayout();
+            this.panNewAcc.ResumeLayout(false);
+            this.panNewAcc.PerformLayout();
+            this.panAccounts.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,23 +336,23 @@
         private System.Windows.Forms.Button btnBalance;
         private System.Windows.Forms.Button btnDetails;
         private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panCusBtns;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panWithdraw;
+        private System.Windows.Forms.Panel panDeposit;
+        private System.Windows.Forms.Panel panBalance;
+        private System.Windows.Forms.Panel panNewAcc;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCancelNew;
         private System.Windows.Forms.Button btnConfirmNew;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panAccounts;
     }
 }
 
