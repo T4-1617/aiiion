@@ -21,6 +21,10 @@ namespace BanKing
         {
             return (Account)accounts[AccountIndex];
         }
+        public System.Collections.ArrayList GetAccounts()
+        {
+            return accounts;
+        }
 
         public void CreateAccount(decimal OpeningDeposit){
             if (OpeningDeposit >= 1000)

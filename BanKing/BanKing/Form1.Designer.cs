@@ -48,12 +48,14 @@
             this.panDeposit = new System.Windows.Forms.Panel();
             this.panBalance = new System.Windows.Forms.Panel();
             this.panNewAcc = new System.Windows.Forms.Panel();
-            this.btnConfirmNew = new System.Windows.Forms.Button();
-            this.btnCancelNew = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnCancelNew = new System.Windows.Forms.Button();
+            this.btnConfirmNew = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panAccounts = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panCusBtns.SuspendLayout();
             this.panWithdraw.SuspendLayout();
             this.panDeposit.SuspendLayout();
@@ -68,7 +70,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Customer",
             "Employee"});
-            this.comboBox1.Location = new System.Drawing.Point(257, 12);
+            this.comboBox1.Location = new System.Drawing.Point(208, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(120, 21);
             this.comboBox1.TabIndex = 0;
@@ -77,10 +79,11 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(112, 53);
+            this.listBox1.Location = new System.Drawing.Point(74, 53);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(132, 160);
             this.listBox1.TabIndex = 1;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // listBox2
             // 
@@ -89,6 +92,7 @@
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(130, 134);
             this.listBox2.TabIndex = 2;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // btnOpenNew
             // 
@@ -98,6 +102,7 @@
             this.btnOpenNew.TabIndex = 3;
             this.btnOpenNew.Text = "Open Account";
             this.btnOpenNew.UseVisualStyleBackColor = true;
+            this.btnOpenNew.Click += new System.EventHandler(this.btnOpenNew_Click);
             // 
             // btnDeposit
             // 
@@ -107,15 +112,17 @@
             this.btnDeposit.TabIndex = 4;
             this.btnDeposit.Text = "Deposit$";
             this.btnDeposit.UseVisualStyleBackColor = true;
+            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
             // btnWithdraw
             // 
-            this.btnWithdraw.Location = new System.Drawing.Point(2, 32);
+            this.btnWithdraw.Location = new System.Drawing.Point(3, 32);
             this.btnWithdraw.Name = "btnWithdraw";
             this.btnWithdraw.Size = new System.Drawing.Size(100, 23);
             this.btnWithdraw.TabIndex = 5;
             this.btnWithdraw.Text = "Withdraw$";
             this.btnWithdraw.UseVisualStyleBackColor = true;
+            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // btnBalance
             // 
@@ -125,22 +132,24 @@
             this.btnBalance.TabIndex = 6;
             this.btnBalance.Text = "Check Balance";
             this.btnBalance.UseVisualStyleBackColor = true;
+            this.btnBalance.Click += new System.EventHandler(this.btnBalance_Click);
             // 
             // btnDetails
             // 
-            this.btnDetails.Location = new System.Drawing.Point(424, 174);
+            this.btnDetails.Location = new System.Drawing.Point(416, 171);
             this.btnDetails.Name = "btnDetails";
             this.btnDetails.Size = new System.Drawing.Size(100, 23);
             this.btnDetails.TabIndex = 7;
             this.btnDetails.Text = "Account details";
             this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // listBox3
             // 
             this.listBox3.FormattingEnabled = true;
             this.listBox3.Location = new System.Drawing.Point(559, 33);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(140, 355);
+            this.listBox3.Size = new System.Drawing.Size(140, 368);
             this.listBox3.TabIndex = 8;
             // 
             // panCusBtns
@@ -148,7 +157,7 @@
             this.panCusBtns.Controls.Add(this.btnBalance);
             this.panCusBtns.Controls.Add(this.btnDeposit);
             this.panCusBtns.Controls.Add(this.btnWithdraw);
-            this.panCusBtns.Location = new System.Drawing.Point(421, 82);
+            this.panCusBtns.Location = new System.Drawing.Point(413, 79);
             this.panCusBtns.Name = "panCusBtns";
             this.panCusBtns.Size = new System.Drawing.Size(122, 91);
             this.panCusBtns.TabIndex = 9;
@@ -203,27 +212,29 @@
             // 
             // panWithdraw
             // 
+            this.panWithdraw.Controls.Add(this.button1);
             this.panWithdraw.Controls.Add(this.textBox2);
             this.panWithdraw.Controls.Add(this.label1);
-            this.panWithdraw.Location = new System.Drawing.Point(265, 268);
+            this.panWithdraw.Location = new System.Drawing.Point(387, 268);
             this.panWithdraw.Name = "panWithdraw";
-            this.panWithdraw.Size = new System.Drawing.Size(166, 44);
+            this.panWithdraw.Size = new System.Drawing.Size(166, 61);
             this.panWithdraw.TabIndex = 17;
             // 
             // panDeposit
             // 
+            this.panDeposit.Controls.Add(this.button2);
             this.panDeposit.Controls.Add(this.textBox1);
             this.panDeposit.Controls.Add(this.label2);
-            this.panDeposit.Location = new System.Drawing.Point(265, 318);
+            this.panDeposit.Location = new System.Drawing.Point(387, 335);
             this.panDeposit.Name = "panDeposit";
-            this.panDeposit.Size = new System.Drawing.Size(166, 35);
+            this.panDeposit.Size = new System.Drawing.Size(166, 57);
             this.panDeposit.TabIndex = 18;
             // 
             // panBalance
             // 
             this.panBalance.Controls.Add(this.textBox3);
             this.panBalance.Controls.Add(this.label3);
-            this.panBalance.Location = new System.Drawing.Point(265, 359);
+            this.panBalance.Location = new System.Drawing.Point(387, 232);
             this.panBalance.Name = "panBalance";
             this.panBalance.Size = new System.Drawing.Size(166, 29);
             this.panBalance.TabIndex = 19;
@@ -234,28 +245,17 @@
             this.panNewAcc.Controls.Add(this.label4);
             this.panNewAcc.Controls.Add(this.btnCancelNew);
             this.panNewAcc.Controls.Add(this.btnConfirmNew);
-            this.panNewAcc.Location = new System.Drawing.Point(44, 268);
+            this.panNewAcc.Location = new System.Drawing.Point(177, 239);
             this.panNewAcc.Name = "panNewAcc";
             this.panNewAcc.Size = new System.Drawing.Size(200, 156);
             this.panNewAcc.TabIndex = 20;
             // 
-            // btnConfirmNew
+            // textBox4
             // 
-            this.btnConfirmNew.Location = new System.Drawing.Point(103, 121);
-            this.btnConfirmNew.Name = "btnConfirmNew";
-            this.btnConfirmNew.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirmNew.TabIndex = 0;
-            this.btnConfirmNew.Text = "Create";
-            this.btnConfirmNew.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelNew
-            // 
-            this.btnCancelNew.Location = new System.Drawing.Point(13, 121);
-            this.btnCancelNew.Name = "btnCancelNew";
-            this.btnCancelNew.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelNew.TabIndex = 1;
-            this.btnCancelNew.Text = "Cancel";
-            this.btnCancelNew.UseVisualStyleBackColor = true;
+            this.textBox4.Location = new System.Drawing.Point(13, 64);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(165, 20);
+            this.textBox4.TabIndex = 3;
             // 
             // label4
             // 
@@ -266,17 +266,28 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Name your account:";
             // 
-            // textBox4
+            // btnCancelNew
             // 
-            this.textBox4.Location = new System.Drawing.Point(13, 64);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(165, 20);
-            this.textBox4.TabIndex = 3;
+            this.btnCancelNew.Location = new System.Drawing.Point(13, 121);
+            this.btnCancelNew.Name = "btnCancelNew";
+            this.btnCancelNew.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelNew.TabIndex = 1;
+            this.btnCancelNew.Text = "Cancel";
+            this.btnCancelNew.UseVisualStyleBackColor = true;
+            // 
+            // btnConfirmNew
+            // 
+            this.btnConfirmNew.Location = new System.Drawing.Point(103, 121);
+            this.btnConfirmNew.Name = "btnConfirmNew";
+            this.btnConfirmNew.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmNew.TabIndex = 0;
+            this.btnConfirmNew.Text = "Create";
+            this.btnConfirmNew.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(183, 20);
+            this.label5.Location = new System.Drawing.Point(134, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 21;
@@ -287,16 +298,36 @@
             // 
             this.panAccounts.Controls.Add(this.btnOpenNew);
             this.panAccounts.Controls.Add(this.listBox2);
-            this.panAccounts.Location = new System.Drawing.Point(256, 50);
+            this.panAccounts.Location = new System.Drawing.Point(218, 50);
             this.panAccounts.Name = "panAccounts";
             this.panAccounts.Size = new System.Drawing.Size(159, 183);
             this.panAccounts.TabIndex = 22;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(73, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Make Withdraw";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(73, 31);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(85, 23);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Make Deposit";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 483);
+            this.ClientSize = new System.Drawing.Size(713, 412);
             this.Controls.Add(this.panAccounts);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panNewAcc);
@@ -353,6 +384,8 @@
         private System.Windows.Forms.Button btnConfirmNew;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panAccounts;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

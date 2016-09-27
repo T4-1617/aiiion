@@ -28,7 +28,6 @@ namespace BanKing
                 listBox1.Items.Add(Customer);
                 listBox1.DisplayMember = "CustomerName";
             }
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -41,7 +40,7 @@ namespace BanKing
                     break;
                 case "Employee":
                     admin = true;
-                    SetPanels(true, false, false, false, false, true, true, true,false);
+                    SetPanels(false, false, false, false, false, false,false, true,false);
                     break;
                 default:
                     break;
@@ -59,22 +58,83 @@ namespace BanKing
             panNewAcc.Visible = PanNewAcc;
             btnDetails.Visible = BtnDetails;
             listBox1.Visible = Field1;
-            
             listBox3.Visible = Field3;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-        }
-        void Reset()
-        {
-            foreach (Control control in this.Controls)
-            {
-                if (control is Panel || control is Button)
-                {
-                    control.Visible = false;
-                }
-            }
         }
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Customer c = (Customer)listBox1.SelectedItem;
+            panAccounts.Visible = true;
+            listBox2.Items.Clear();
+            foreach (Account account in c.GetAccounts())
+            {
+                listBox2.Items.Add(account);
+            }
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            switch (admin)//skriver ut panelerna som respektive användare behöver
+            {
+                case true:
+                    SetPanels(true, false, false, false, false, false, true, true, false);
+                    break;
+                case false:
+                    SetPanels(true, true, false, false, false, false, false, true, false);
+                    break;
+                default:
+                    break;
+            } 
+        }
+
+        private void btnBalance_Click(object sender, EventArgs e)
+        {
+            Account a = (Account)listBox2.SelectedItem;//visar hur mycket pengar som finns på kontot
+            textBox3.Text = a.Balance.ToString();
+            SetPanels(true, true, false, false, true, false, false, true, false);
+            
+        }
+
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            SetPanels(true, true, true, false, false, false, false, true, false);
+        }
+
+        private void btnDeposit_Click(object sender, EventArgs e)
+        {
+            SetPanels(true, true, false, true, false, false, false, true, false);
+        }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            SetPanels(true, false, false, false, false, false, true, true, true);
+        }
+
+        private void btnOpenNew_Click(object sender, EventArgs e)
+        {
+            SetPanels(true, false, false, false, false, true, false, true, false);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //tar ut pengar
+            Account a = (Account)listBox2.SelectedItem;
+            a.Withdraw(decimal.Parse(textBox2.Text));
+            SetPanels(true, true, false, false, false, false, false, true, false);
+            textBox2.Text = null;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Account a = (Account)listBox2.SelectedItem;
+            a.Deposit(decimal.Parse(textBox1.Text));
+            SetPanels(true, true, false, false, false, false, false, true, false);
+            textBox1.Text = null;
         }
     }
 }
