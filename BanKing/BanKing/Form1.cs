@@ -13,6 +13,7 @@ namespace BanKing
     public partial class Form1 : Form
     {
         private System.Collections.ArrayList CustomerList;
+
         public Form1()
         {
             InitializeComponent();
@@ -106,7 +107,14 @@ namespace BanKing
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
+            listBox3.Items.Clear();
             SetPanels(true, false, false, false, false, false, true, true, true);
+            //titta hit!
+            Account a = (Account)listBox2.SelectedItem;
+            foreach  (Transaction item in a.GetTransactions())
+            {
+                listBox3.Items.Add(item);
+            }
         }
 
         private void btnOpenNew_Click(object sender, EventArgs e)
@@ -119,6 +127,14 @@ namespace BanKing
             //tar ut pengar
             Account a = (Account)listBox2.SelectedItem;
             a.Withdraw(decimal.Parse(textBox2.Text));
+            Customer c = (Customer)listBox1.SelectedItem;
+            Transaction t = new Transaction()
+            {
+                change = (decimal.Parse(textBox2.Text)),
+                typeTransaction="Withdrawed",
+                whoChanged = c.CustomerName
+            };
+            a.AddTransaction(t);
             SetPanels(true, true, false, false, false, false, false, true, false);
             textBox2.Text = null;
         }
@@ -128,6 +144,14 @@ namespace BanKing
             //sätter in pengar
             Account a = (Account)listBox2.SelectedItem;
             a.Deposit(decimal.Parse(textBox1.Text));
+            Customer c = (Customer)listBox1.SelectedItem;
+            Transaction t = new Transaction()
+            {
+                change = (decimal.Parse(textBox1.Text)),
+                typeTransaction="Deposited",
+                whoChanged= c.CustomerName
+        };
+            a.AddTransaction(t);
             SetPanels(true, true, false, false, false, false, false, true, false);
             textBox1.Text = null;
         }

@@ -11,6 +11,7 @@ namespace BanKing
         public string CustomerName { get; set; }
         public int CustomerId { get; set; }
         private System.Collections.ArrayList accounts;
+        
 
         public Customer()
         {
@@ -39,19 +40,42 @@ namespace BanKing
 
     public class Account
     {
+        private System.Collections.ArrayList Transactions;
         private decimal balance;
-        public string AccountName;
         public decimal Balance
         {
             get { return balance; }
         }
         public void Deposit(decimal amount)
         {
-            balance = balance + amount;
+            balance += amount;
         }
         public void Withdraw(decimal amount)
         {
             balance = balance - amount;
+        }
+        public Account()
+        {
+            Transactions = new System.Collections.ArrayList();
+        }
+        public System.Collections.ArrayList GetTransactions()
+        {
+            return Transactions;
+        }
+        public void AddTransaction(Transaction transaction)
+        {
+            Transactions.Add(transaction);
+        }
+    }
+    public class Transaction
+    {
+        public decimal change;
+        public string whoChanged;
+        public string typeTransaction;
+        
+        public override string ToString()
+        {
+            return string.Format("{0} {1} {2} kr",whoChanged,typeTransaction,change);
         }
     }
 }
