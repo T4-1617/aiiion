@@ -13,15 +13,20 @@ namespace BanKing
     public partial class Form1 : Form
     {
         private System.Collections.ArrayList CustomerList;
-        Boolean admin;
         public Form1()
         {
             InitializeComponent();
             CustomerList = new System.Collections.ArrayList();
             SetPanels(false, false, false, false, false, false, false, false, false);
 
-            Customer c = new Customer() { CustomerName = "Urban" };
-            c.CreateAccount(1200);
+            Customer c = new Customer() { CustomerName = "Urban Suedei" };
+            c.CreateAccount(1200);  
+            CustomerList.Add(c);
+
+            c = new Customer() { CustomerName = "Frank Ocean" };
+            c.CreateAccount(5200);
+            c.CreateAccount(1000);
+            c.CreateAccount(500000);
             CustomerList.Add(c);
             foreach (Customer Customer in CustomerList)
             {
@@ -32,19 +37,7 @@ namespace BanKing
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboBox1.Text)
-            {
-                case "Customer":
-                    admin = false;
-                    SetPanels(false, false, false, false,false,false,false,true,false);
-                    break;
-                case "Employee":
-                    admin = true;
-                    SetPanels(false, false, false, false, false, false,false, true,false);
-                    break;
-                default:
-                    break;
-            }
+            SetPanels(false, false, false, false, false, false, false, true, false);
         }
 
         private void SetPanels(bool panAcc, bool PanCusBtns, bool PanWithdraw, bool PanDeposit,
@@ -60,6 +53,7 @@ namespace BanKing
             listBox1.Visible = Field1;
             listBox3.Visible = Field3;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
         }
+
         private void label5_Click(object sender, EventArgs e)
         {
 
@@ -68,7 +62,7 @@ namespace BanKing
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Customer c = (Customer)listBox1.SelectedItem;
-            panAccounts.Visible = true;
+            SetPanels(true, false, false, false, false, false, false, true, false);
             listBox2.Items.Clear();
             foreach (Account account in c.GetAccounts())
             {
@@ -79,12 +73,12 @@ namespace BanKing
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            switch (admin)//skriver ut panelerna som respektive användare behöver
+            switch (comboBox1.Text)//skriver ut panelerna som respektive användare behöver
             {
-                case true:
+                case "Employee":
                     SetPanels(true, false, false, false, false, false, true, true, false);
                     break;
-                case false:
+                case "Customer":
                     SetPanels(true, true, false, false, false, false, false, true, false);
                     break;
                 default:
@@ -131,10 +125,30 @@ namespace BanKing
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //sätter in pengar
             Account a = (Account)listBox2.SelectedItem;
             a.Deposit(decimal.Parse(textBox1.Text));
             SetPanels(true, true, false, false, false, false, false, true, false);
             textBox1.Text = null;
+        }
+
+        private void btnCancelNew_Click(object sender, EventArgs e)
+        {
+            textBox5.Text = null;
+            SetPanels(true, false, false, false, false, false, false, true, false);
+        }
+
+        private void btnConfirmNew_Click(object sender, EventArgs e)
+        {
+            Customer c = (Customer)listBox1.SelectedItem;
+            c.CreateAccount(decimal.Parse(textBox5.Text));
+            textBox5.Text = null;
+            SetPanels(true, false, false, false, false, false, false, true, false);
+            listBox2.Items.Clear();
+            foreach (Account account in c.GetAccounts())
+            {
+                listBox2.Items.Add(account);
+            }
         }
     }
 }

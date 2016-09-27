@@ -48,14 +48,14 @@
             this.panDeposit = new System.Windows.Forms.Panel();
             this.panBalance = new System.Windows.Forms.Panel();
             this.panNewAcc = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnCancelNew = new System.Windows.Forms.Button();
             this.btnConfirmNew = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panAccounts = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.panCusBtns.SuspendLayout();
             this.panWithdraw.SuspendLayout();
             this.panDeposit.SuspendLayout();
@@ -241,48 +241,34 @@
             // 
             // panNewAcc
             // 
-            this.panNewAcc.Controls.Add(this.textBox4);
-            this.panNewAcc.Controls.Add(this.label4);
+            this.panNewAcc.Controls.Add(this.textBox5);
+            this.panNewAcc.Controls.Add(this.label6);
             this.panNewAcc.Controls.Add(this.btnCancelNew);
             this.panNewAcc.Controls.Add(this.btnConfirmNew);
             this.panNewAcc.Location = new System.Drawing.Point(177, 239);
             this.panNewAcc.Name = "panNewAcc";
-            this.panNewAcc.Size = new System.Drawing.Size(200, 156);
+            this.panNewAcc.Size = new System.Drawing.Size(200, 100);
             this.panNewAcc.TabIndex = 20;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(13, 64);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(165, 20);
-            this.textBox4.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Name your account:";
             // 
             // btnCancelNew
             // 
-            this.btnCancelNew.Location = new System.Drawing.Point(13, 121);
+            this.btnCancelNew.Location = new System.Drawing.Point(13, 62);
             this.btnCancelNew.Name = "btnCancelNew";
             this.btnCancelNew.Size = new System.Drawing.Size(75, 23);
             this.btnCancelNew.TabIndex = 1;
             this.btnCancelNew.Text = "Cancel";
             this.btnCancelNew.UseVisualStyleBackColor = true;
+            this.btnCancelNew.Click += new System.EventHandler(this.btnCancelNew_Click);
             // 
             // btnConfirmNew
             // 
-            this.btnConfirmNew.Location = new System.Drawing.Point(103, 121);
+            this.btnConfirmNew.Location = new System.Drawing.Point(103, 62);
             this.btnConfirmNew.Name = "btnConfirmNew";
             this.btnConfirmNew.Size = new System.Drawing.Size(75, 23);
             this.btnConfirmNew.TabIndex = 0;
             this.btnConfirmNew.Text = "Create";
             this.btnConfirmNew.UseVisualStyleBackColor = true;
+            this.btnConfirmNew.Click += new System.EventHandler(this.btnConfirmNew_Click);
             // 
             // label5
             // 
@@ -322,6 +308,22 @@
             this.button2.Text = "Make Deposit";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Inital Deposit:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(13, 29);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(175, 20);
+            this.textBox5.TabIndex = 5;
             // 
             // Form1
             // 
@@ -378,14 +380,14 @@
         private System.Windows.Forms.Panel panDeposit;
         private System.Windows.Forms.Panel panBalance;
         private System.Windows.Forms.Panel panNewAcc;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCancelNew;
         private System.Windows.Forms.Button btnConfirmNew;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panAccounts;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label6;
     }
 }
 

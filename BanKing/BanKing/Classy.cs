@@ -40,6 +40,7 @@ namespace BanKing
     public class Account
     {
         private decimal balance;
+        public string AccountName;
         public decimal Balance
         {
             get { return balance; }
