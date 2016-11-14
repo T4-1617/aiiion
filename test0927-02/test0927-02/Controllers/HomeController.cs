@@ -24,5 +24,9 @@ namespace test0927_02.Controllers
             //dvs samma som metod heter
             return View();
         }
+        public ActionResult About()
+        {
+            return View();
+        }
     }
 }
